@@ -3,5 +3,6 @@ import matplotlib.pyplot as plt
 from PIL import Image
 img = Image.open('water.jpg')
 img_arr = np.array(img)
-plt.imshow(np.transpose(img_arr, (1, 0, 2)))
+img_arr = img_arr.mean(axis=2)
+plt.imshow(np.transpose(img_arr, (1, 0)), cmap='gray')
 plt.show()
